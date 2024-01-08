@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "sourceMap": false,
+        "strictPropertyInitialization": false,
+        "outDir": "build",
+        "baseUrl": ".",
+        "paths": {
+            "@logger": ["src/common/logger"]
+        }
+    },
+    "include": [
+        "src/**/*",
+        "typings/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "build"
+    ]
+}

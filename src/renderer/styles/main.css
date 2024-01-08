@@ -1,0 +1,112 @@
+/* Clean up UI */
+#header,
+#version,
+#secondaryContent,
+#tertiaryContent,
+#leftBanner,
+#rightBanner,
+#red_infiltration {
+    display: none !important;
+}
+
+/* Disable scrolling */
+html,
+body {
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Center UI */
+#contentWrapper,
+#content {
+    width: fit-content !important;
+    height: 100vh !important;
+    margin: 0 !important;
+}
+
+#mainContent {
+    width: 100vw !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game {
+    top: 0;
+    left: 0;
+}
+
+#game canvas {
+    width: 100vw !important;
+}
+
+/* Server info box styling */
+#serverInfoBox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#serverInfoBox .note {
+    white-space: pre;
+}
+
+#serverInfoBox img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Decluttered chat design */
+#chat {
+    inset: calc(100% - 10px) auto auto 10px !important;
+    filter: none;
+    -webkit-filter: none;
+}
+
+#chat .status.button,
+#chat form,
+#chat .handle {
+    display: none !important
+}
+
+/*Reverse chat flow*/
+#chat,
+#chat .content,
+#chat .body {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#chat .body {
+    width: 260px !important;
+    height: 150px !important;
+    padding-right: 10px;
+    margin: 0;
+    border-radius: 3px;
+    background: transparent;
+    overflow: hidden;
+    top: 0 !important;
+    mask-image: linear-gradient(to top, #000000 40%, rgba(0, 0, 0, 0.11));
+    -webkit-mask-image: linear-gradient(to top, #000000 40%, rgba(0, 0, 0, 0.11));
+}
+
+#chat .body .chatMessage svg {
+    background: #8f8f8f42;
+    border-radius: 0 4px 4px 0;
+    padding: 2px 4px 1px 4px;
+    border-left: 2px dotted rgb(170, 170, 170);
+    filter: drop-shadow(2px 2px 2px #00000023);
+}
+
+/* Hide system messages */
+#chat .body > .chatMessage.hasSVG svg:has(text[fill="gray"]) {
+    display: none;
+}

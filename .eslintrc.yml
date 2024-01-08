@@ -1,0 +1,51 @@
+parser: '@typescript-eslint/parser'
+
+settings:
+  import/core-modules: [electron]
+
+plugins:
+  - '@typescript-eslint'
+  - import
+  - jsdoc
+
+ignorePatterns:
+  - node_modules/
+  - build/
+  - gulpfile.js
+  - make.mjs
+
+extends:
+  - raven
+  - plugin:@typescript-eslint/recommended
+  - airbnb-typescript/base
+  - plugin:jsdoc/recommended
+
+parserOptions:
+  project: ./tsconfig.json
+  sourceType: module
+
+rules:
+  '@typescript-eslint/indent': [error, tab]
+  '@typescript-eslint/comma-dangle': [error, never]
+  '@typescript-eslint/space-before-function-paren': [error, never]
+
+  jsdoc/require-jsdoc:
+  - error
+  - require:
+      ArrowFunctionExpression: true
+      ClassExpression: true
+      FunctionDeclaration: true
+      MethodDefinition: true
+  jsdoc/require-param-type: 0
+  jsdoc/require-returns-type: 0
+
+  no-trailing-spaces: [error, { ignoreComments: true }]
+  multiline-comment-style: [error, separate-lines]
+  id-length: [warn, { exceptions: [i, j, k] }]
+  linebreak-style: 0
+  sort-keys: 0
+  no-labels: 0
+
+env:
+  browser: true
+  node: true
